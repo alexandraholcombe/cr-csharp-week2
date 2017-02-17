@@ -43,10 +43,6 @@ namespace WordCounter
                     }
                 }
             }
-            foreach (string word in userStringWords)
-            {
-                Console.WriteLine(word);
-            }
 
             int instanceCount = 0;
 
@@ -57,7 +53,6 @@ namespace WordCounter
                     instanceCount += 1;
                 }
             }
-
             return instanceCount;
         }
     }
