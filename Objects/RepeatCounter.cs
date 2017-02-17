@@ -25,8 +25,8 @@ namespace WordCounter
 
         public int CountRepeats()
         {
-            string userString = GetInputString();
-            string userWord = GetInputWord();
+            string userString = GetInputString().ToLower();
+            string userWord = GetInputWord().ToLower();
 
             string[] userStringWords = userString.Split(' ');
             int instanceCount = 0;
@@ -40,18 +40,6 @@ namespace WordCounter
             }
 
             return instanceCount;
-            // if (userString.Equals(userWord))
-            // {
-            //     return 1;
-            // }
-            // else if (userString.Contains(userWord))
-            // {
-            //     return 1;
-            // }
-            // else
-            // {
-            //     return 0;
-            // }
         }
     }
 }
