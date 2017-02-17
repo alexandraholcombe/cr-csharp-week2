@@ -1,5 +1,6 @@
 using Xunit;
 using System;
+using WordCounter.Objects;
 using System.Collections.Generic;
 
 namespace WordCounter
