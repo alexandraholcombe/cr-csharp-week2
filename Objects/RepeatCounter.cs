@@ -25,7 +25,17 @@ namespace WordCounter
 
         public int CountRepeats()
         {
-            return 0;
+            string userString = GetInputString();
+            string userWord = GetInputWord();
+
+            if (userString.Equals(userWord))
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
