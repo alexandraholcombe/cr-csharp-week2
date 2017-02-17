@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter
 {
@@ -29,6 +30,24 @@ namespace WordCounter
             string userWord = GetInputWord().ToLower();
 
             string[] userStringWords = userString.Split(' ');
+
+            //to remove punctuation
+            for (int i = 0; i < userStringWords.Length; i++)
+            {
+                char[] currentWord = userStringWords[i].ToCharArray();
+                foreach (char letter in currentWord)
+                {
+                    if (char.IsPunctuation(letter))
+                    {
+                        userStringWords[i] = userStringWords[i].Remove(Array.IndexOf(currentWord, letter));
+                    }
+                }
+            }
+            foreach (string word in userStringWords)
+            {
+                Console.WriteLine(word);
+            }
+
             int instanceCount = 0;
 
             foreach (string word in userStringWords)
