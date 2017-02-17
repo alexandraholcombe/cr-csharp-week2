@@ -24,24 +24,34 @@ namespace WordCounter
             return _inputWord;
         }
 
+        public string PunctuationRemover(string thisWord)
+        {
+            char[] currentWord = thisWord.ToCharArray();
+            foreach (char letter in currentWord)
+            {
+                if (char.IsPunctuation(letter))
+                {
+                    int here = Array.IndexOf(currentWord, letter);
+                    thisWord = thisWord.Remove(here, 1);
+                }
+            }
+            return thisWord;
+        }
+
         public int CountRepeats()
         {
             string userString = GetInputString().ToLower();
             string userWord = GetInputWord().ToLower();
 
+            //to remove punctuation from word
+            userWord = PunctuationRemover(userWord);
+
             string[] userStringWords = userString.Split(' ');
 
-            //to remove punctuation
+            //to remove punctuation from string
             for (int i = 0; i < userStringWords.Length; i++)
             {
-                char[] currentWord = userStringWords[i].ToCharArray();
-                foreach (char letter in currentWord)
-                {
-                    if (char.IsPunctuation(letter))
-                    {
-                        userStringWords[i] = userStringWords[i].Remove(Array.IndexOf(currentWord, letter));
-                    }
-                }
+                userStringWords[i]=PunctuationRemover(userStringWords[i]);
             }
 
             int instanceCount = 0;
