@@ -1,7 +1,7 @@
 @{
     Layout="Shared/_Layout.cshtml";
 }
-<p><span>Number of times your word appears:</span></p>
-<h1>@Model.CountRepeats()</h1>
+<p><span id="number-of-times">Number of times <span id="my-word">@Model.GetInputWord()</span> appears:</span></p>
+<h1 id="counted">@Model.CountRepeats()</h1>
 
 <p><a href="/" class="btn">count again</a></p>
