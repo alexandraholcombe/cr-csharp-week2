@@ -32,6 +32,10 @@ namespace WordCounter
             {
                 return 1;
             }
+            else if (userString.Contains(userWord))
+            {
+                return 1;
+            }
             else
             {
                 return 0;
