@@ -26,5 +26,16 @@ namespace WordCounter
             int expectedResult = 1;
             Assert.Equal(expectedResult, result);
         }
+
+        [Fact]
+        public void CountRepeats_ForWordInStringOnce_1()
+        {
+            string userInputString = "I love to code";
+            string userInputWord = "code";
+            RepeatCounter testRepeatCounter = new RepeatCounter(userInputString, userInputWord);
+            int result = testRepeatCounter.CountRepeats();
+            int expectedResult = 1;
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
