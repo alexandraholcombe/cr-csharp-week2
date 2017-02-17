@@ -48,7 +48,7 @@ This website will take a string and a word from a user, then count the number of
 **The user can input a word that exists multiple times in the string and the application will return the number of times the word appears.**
 * Example Input:
       String: "What's better than coding?  Nothing is better than coding."
-      Word: "coding"
+      Word: "better"
 * Example Output:
       2
 
@@ -56,13 +56,23 @@ This website will take a string and a word from a user, then count the number of
 
 **The user can input a word with capitalization and the application will find all occurrences of the word, regardless of case.**
 * Example Input:
-      String: "What's better than Coding?  Nothing is better than CODING."
-      Word: "coding"
+      String: "What's Better than coding?  Nothing is BETTER than coding."
+      Word: "better"
 
 * Example Output:
       2
 
     _This is a small behavior, but is a higher level of specificity and complexity than the previous specification._
+
+**The user can input a word and the application will find all occurrences of the word, including those instances tied to punctuation.**
+* Example Input:
+      String: "What's better than coding?  Nothing is better than coding."
+      Word: "coding"
+
+* Example Output:
+      2
+
+    _Additional processes must be added to ignore punctuation, thus making this specification a higher level of specificity and complexity than the last specification._
 
 
 ## Support and contact details

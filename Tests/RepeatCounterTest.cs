@@ -42,7 +42,7 @@ namespace WordCounter
         public void CountRepeats_ForWordInStringMultipleTimes_wordcount()
         {
             string userInputString = "What's better than coding? Nothing is better than coding.";
-            string userInputWord = "coding";
+            string userInputWord = "better";
             RepeatCounter testRepeatCounter = new RepeatCounter(userInputString, userInputWord);
             int result = testRepeatCounter.CountRepeats();
             int expectedResult = 2;

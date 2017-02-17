@@ -28,18 +28,30 @@ namespace WordCounter
             string userString = GetInputString();
             string userWord = GetInputWord();
 
-            if (userString.Equals(userWord))
+            string[] userStringWords = userString.Split(' ');
+            int instanceCount = 0;
+
+            foreach (string word in userStringWords)
             {
-                return 1;
+                if (word.Equals(userWord))
+                {
+                    instanceCount += 1;
+                }
             }
-            else if (userString.Contains(userWord))
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+
+            return instanceCount;
+            // if (userString.Equals(userWord))
+            // {
+            //     return 1;
+            // }
+            // else if (userString.Contains(userWord))
+            // {
+            //     return 1;
+            // }
+            // else
+            // {
+            //     return 0;
+            // }
         }
     }
 }
