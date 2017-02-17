@@ -37,5 +37,16 @@ namespace WordCounter
             int expectedResult = 1;
             Assert.Equal(expectedResult, result);
         }
+
+        [Fact]
+        public void CountRepeats_ForWordInStringMultipleTimes_wordcount()
+        {
+            string userInputString = "What's better than coding? Nothing is better than coding.";
+            string userInputWord = "coding";
+            RepeatCounter testRepeatCounter = new RepeatCounter(userInputString, userInputWord);
+            int result = testRepeatCounter.CountRepeats();
+            int expectedResult = 2;
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
